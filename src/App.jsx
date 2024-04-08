@@ -22,12 +22,13 @@ function Header() {
   );
 }
 
-function CoreConcept(props) {
+function CoreConcept({image, title, description}) {
+  /*Used onject destructuring sytax to make the function shorter*/
   return (
     <li>
-      <img src={props.image} alt={props.title} />
-      <h3>{props.title}</h3>
-      <p>{props.description}</p>
+      <img src={image} alt={title} />
+      <h3>{title}</h3>
+      <p>{description}</p>
     </li>
   );
 }
@@ -40,11 +41,10 @@ function App() {
         <section id="core-concepts">
           <h2>Time to get started!</h2>
           <ul>
-            <CoreConcept
-              title={CORE_CONCEPTS[0].title}
-              description={CORE_CONCEPTS[0].description}
-              image={CORE_CONCEPTS[0].image}
-            />
+            <CoreConcept {...CORE_CONCEPTS[0]}/> 
+            {/*Shorter version. This pulls all the key-value pairs from the object 
+            Prop names should be similar to the property names 
+            of the object that contains the data you wanna set*/ }
             <CoreConcept
               title={CORE_CONCEPTS[1].title}
               description={CORE_CONCEPTS[1].description}
