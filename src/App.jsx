@@ -3,13 +3,18 @@ import Header from "./components/Header/Header.jsx";
 import CoreConcept from "./components/CoreConcept.jsx";
 import TabButton from "./components/TabButton.jsx";
 import Card from "./components/Card/Card.jsx";
+import { useState } from "react";
 
 function App() {
+  const [ selectedTopic, setSelectedTopic] = useState('Please click a button');
+  
+  
   function handleSelect(selectedButton) {
+    setSelectedTopic(selectedButton);
     console.log(selectedButton);
     
   }
-
+  console.log("App Component Executing");
   return (
     <div>
       <Header />
@@ -48,6 +53,7 @@ function App() {
             <TabButton label="State" onSelect={() => handleSelect('state')} />
 
           </menu>
+          {selectedTopic}
 
         </section>
         <section>
