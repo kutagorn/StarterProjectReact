@@ -13,8 +13,12 @@ return(
 */
 
 export default function TabButton({ label }) {
-  return <button>{label}</button>;
-} /*
+    function handleClick(){
+        console.log('HelloWorld');
+    }
+  return <button onClick={handleClick}>{label}</button>;
+} 
+/*
 if you just put a label without string decoupling you need to use it like this.
 export default function TabButton(props){
     

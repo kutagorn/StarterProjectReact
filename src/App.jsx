@@ -38,6 +38,10 @@ function App() {
           <menu>
             {/* <TabButton>Components</TabButton> <---Children usage*/}
             <TabButton label="Components" />
+            <TabButton label="JSX" />
+            <TabButton label="Props" />
+            <TabButton label="State" />
+
           </menu>
         </section>
         <section>
