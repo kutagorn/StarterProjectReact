@@ -2,6 +2,7 @@ import { CORE_CONCEPTS } from "./data.js";
 import Header from "./components/Header/Header.jsx";
 import CoreConcept from "./components/CoreConcept.jsx";
 import TabButton from "./components/TabButton.jsx";
+import Card from "./components/Card/Card.jsx";
 
 function App() {
   return (
@@ -38,6 +39,28 @@ function App() {
             {/* <TabButton>Components</TabButton> <---Children usage*/}
             <TabButton label="Components" />
           </menu>
+        </section>
+        <section>
+          <h1>Available Experts</h1>
+          <Card name="Kutay Can Kaynak">
+            <p>
+              Kaynak is a graduate of Software Engineering at the University of
+              Beykent.
+            </p>
+            <p>
+              <a href="mailto:kutaycankaynak@gmail.com">Email Kutay</a>
+            </p>
+          </Card>
+
+          <Card name="Ozgur Ozbek">
+            <p>
+              Ozbek is a professor of Computer Science at the University of
+              Illinois.
+            </p>
+            <p>
+              <a href="mailto:ozgurozbek@gmail.com">Email Ozgur</a>
+            </p>
+          </Card>
         </section>
       </main>
     </div>

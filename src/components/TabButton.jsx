@@ -13,7 +13,7 @@ return(
 */
 
 export default function TabButton({ label }) {
-  return <li>{label}</li>;
+  return <button>{label}</button>;
 } /*
 if you just put a label without string decoupling you need to use it like this.
 export default function TabButton(props){
