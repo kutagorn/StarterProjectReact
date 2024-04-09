@@ -12,11 +12,9 @@ return(
 }
 */
 
-export default function TabButton({ label }) {
-    function handleClick(){
-        console.log('HelloWorld');
-    }
-  return <button onClick={handleClick}>{label}</button>;
+export default function TabButton({ label, onSelect }) {
+
+  return <button onClick={onSelect}>{label}</button>;
 } 
 /*
 if you just put a label without string decoupling you need to use it like this.

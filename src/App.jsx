@@ -5,6 +5,11 @@ import TabButton from "./components/TabButton.jsx";
 import Card from "./components/Card/Card.jsx";
 
 function App() {
+  function handleSelect() {
+    console.log("Hello wrolds");
+    
+  }
+
   return (
     <div>
       <Header />
@@ -37,12 +42,13 @@ function App() {
           <h2>Examples</h2>
           <menu>
             {/* <TabButton>Components</TabButton> <---Children usage*/}
-            <TabButton label="Components" />
-            <TabButton label="JSX" />
-            <TabButton label="Props" />
-            <TabButton label="State" />
+            <TabButton label="Components" onSelect={handleSelect} />
+            <TabButton label="JSX" onSelect={handleSelect} />
+            <TabButton label="Props" onSelect={handleSelect} />
+            <TabButton label="State" onSelect={handleSelect} />
 
           </menu>
+
         </section>
         <section>
           <h1>Available Experts</h1>
