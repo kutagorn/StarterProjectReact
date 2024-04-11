@@ -13,9 +13,12 @@ return(
 */
 
 export default function TabButton({ children, onSelect, isSelected }) {
-
-  return <button className={isSelected ? 'active':undefined} onClick={onSelect}>{children}</button>;
-} 
+  return (
+    <button className={isSelected ? "active" : undefined} onClick={onSelect}>
+      {children}
+    </button>
+  );
+}
 /*
 if you just put a label without string decoupling you need to use it like this.
 export default function TabButton(props){

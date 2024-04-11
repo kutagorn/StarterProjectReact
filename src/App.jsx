@@ -8,61 +8,60 @@ import { EXAMPLES } from "./data.js";
 function App() {
   const [selectedTopic, setSelectedTopic] = useState();
   const [showExperts, setShowExperts] = useState();
-  
+
   function handleSelect(selectedButton) {
     setSelectedTopic(selectedButton);
     console.log(selectedButton);
   }
-  function handleExpert(selectedExpert){
-    setShowExperts(selectedExpert)
-
+  function handleExpert(selectedExpert) {
+    setShowExperts(selectedExpert);
   }
   console.log("App Component Executing");
 
   let tabContent = <p>Please select a topic.</p>;
-  if (selectedTopic){
+  if (selectedTopic) {
     tabContent = (
       <div id="tab-content">
-              <h3>{EXAMPLES[selectedTopic].title} </h3>
-              <p>{EXAMPLES[selectedTopic].description}</p>
-              <pre>
-                <code>{EXAMPLES[selectedTopic].code}</code>
-              </pre>
-            </div>
+        <h3>{EXAMPLES[selectedTopic].title} </h3>
+        <p>{EXAMPLES[selectedTopic].description}</p>
+        <pre>
+          <code>{EXAMPLES[selectedTopic].code}</code>
+        </pre>
+      </div>
     );
   }
 
-  let expertContent = null
-  if (showExperts){
+  let expertContent = null;
+  if (showExperts) {
     expertContent = (
       <section>
-          <h1>Available Experts</h1>
-          <Card name="Kutay Can Kaynak">
-            <p>
-              Kaynak is a graduate of Software Engineering at the University of
-              Beykent.
-            </p>
-            <p>
-              <a href="mailto:kutaycankaynak@gmail.com">Email Kutay</a>
-            </p>
-          </Card>
+        <h1>Available Experts</h1>
+        <Card name="Kutay Can Kaynak">
+          <p>
+            Kaynak is a graduate of Software Engineering at the University of
+            Beykent.
+          </p>
+          <p>
+            <a href="mailto:kutaycankaynak@gmail.com">Email Kutay</a>
+          </p>
+        </Card>
 
-          <Card name="Ozgur Ozbek">
-            <p>
-              Ozbek is a professor of Computer Science at the University of
-              Illinois.
-            </p>
-            <p>
-              <a href="mailto:ozgurozbek@gmail.com">Email Ozgur</a>
-            </p>
-          </Card>
-        </section>
+        <Card name="Ozgur Ozbek">
+          <p>
+            Ozbek is a professor of Computer Science at the University of
+            Illinois.
+          </p>
+          <p>
+            <a href="mailto:ozgurozbek@gmail.com">Email Ozgur</a>
+          </p>
+        </Card>
+      </section>
     );
   }
 
   return (
     <div>
-      <Header/>
+      <Header />
       <main>
         <section id="core-concepts">
           <h2>Time to get started!</h2>
@@ -86,18 +85,45 @@ function App() {
               description={CORE_CONCEPTS[3].description}
               image={CORE_CONCEPTS[3].image}
             /> */}
-            {CORE_CONCEPTS.map((conceptItem)=>(<CoreConcept key={conceptItem.title} {...conceptItem}/>))}
+            {CORE_CONCEPTS.map((conceptItem) => (
+              <CoreConcept key={conceptItem.title} {...conceptItem} />
+            ))}
           </ul>
         </section>
         <section id="examples">
           <h2>Examples</h2>
           <menu>
             {/* <TabButton>Components</TabButton> <---Children usage*/}
-            <TabButton isSelected={selectedTopic === 'components'} onSelect={() => handleSelect("components")}>Components </TabButton>
-            <TabButton isSelected={selectedTopic === 'jsx'} onSelect={() => handleSelect("jsx")}>jsx </TabButton>
-            <TabButton isSelected={selectedTopic === 'props'} onSelect={() => handleSelect("props")}>props </TabButton>
-            <TabButton isSelected={selectedTopic === 'state'} onSelect={() => handleSelect("state")}>state </TabButton>
-            <TabButton isSelected={selectedTopic === 'Experts'} onSelect={() => handleExpert("Experts")}>Experts </TabButton>
+            <TabButton
+              isSelected={selectedTopic === "components"}
+              onSelect={() => handleSelect("components")}
+            >
+              Components{" "}
+            </TabButton>
+            <TabButton
+              isSelected={selectedTopic === "jsx"}
+              onSelect={() => handleSelect("jsx")}
+            >
+              jsx{" "}
+            </TabButton>
+            <TabButton
+              isSelected={selectedTopic === "props"}
+              onSelect={() => handleSelect("props")}
+            >
+              props{" "}
+            </TabButton>
+            <TabButton
+              isSelected={selectedTopic === "state"}
+              onSelect={() => handleSelect("state")}
+            >
+              state{" "}
+            </TabButton>
+            <TabButton
+              isSelected={selectedTopic === "Experts"}
+              onSelect={() => handleExpert("Experts")}
+            >
+              Experts{" "}
+            </TabButton>
           </menu>
           {tabContent}
           {/* {!selectedTopic ? <p>Please select a topic.</p> : (
@@ -110,8 +136,6 @@ function App() {
             </div>
           )} */}
           {/*If selected Topic ===null show <p> if not render nothing*/}
-
-          
         </section>
         {expertContent}
         {/* {showExperts === 'Experts' ?(<section>
@@ -136,7 +160,6 @@ function App() {
             </p>
           </Card>
         </section>) : null} */}
-        
       </main>
     </div>
   );
