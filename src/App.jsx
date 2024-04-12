@@ -3,7 +3,7 @@ import Header from "./components/Header/Header.jsx";
 import CoreConcept from "./components/CoreConcept.jsx";
 import TabButton from "./components/TabButton.jsx";
 import Card from "./components/Card/Card.jsx";
-import { useState } from "react";
+import { useState, Fragment } from "react";
 import { EXAMPLES } from "./data.js";
 function App() {
   const [selectedTopic, setSelectedTopic] = useState();
@@ -60,8 +60,8 @@ function App() {
   }
 
   return (
-    <div>
-      <Header />
+    <Fragment /* Use Fragment instead of div for cleaner inspect result in browser. You can not just delete the div, you have to have a parent object */>  
+      <Header/>
       <main>
         <section id="core-concepts">
           <h2>Time to get started!</h2>
@@ -161,7 +161,7 @@ function App() {
           </Card>
         </section>) : null} */}
       </main>
-    </div>
+    </Fragment>
   );
 }
 
