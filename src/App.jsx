@@ -1,6 +1,7 @@
 import Header from "./components/Header/Header.jsx";
 import CoreConcepts from "./components/CoreConcepts.jsx";
 import Examples from "./components/Examples.jsx";
+import Input from "./components/Input.jsx";
 
 
 function App() {
@@ -15,7 +16,9 @@ function App() {
       <main>
         <CoreConcepts/>
         <Examples/>
-        
+        <Input type="text" placeholder="Your name"/>
+        <Input richText placeholder="Your message"/>
+
         {/* {showExperts === 'Experts' ?(<section>
           <h1>Available Experts</h1>
           <Card name="Kutay Can Kaynak">
