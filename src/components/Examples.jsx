@@ -2,6 +2,7 @@ import { useState } from "react";
 import { EXAMPLES } from "../data";
 import TabButton from "./TabButton";
 import Card from "./Card/Card";
+import Section from "./Section";
 
 export default function Examples() {
   const [selectedTopic, setSelectedTopic] = useState();
@@ -56,9 +57,8 @@ export default function Examples() {
   }
 
   return (
-    <section id="examples">
-      <h2>Examples</h2>
-      <menu>
+    <Section title="Examples">
+        <menu>
         {/* <TabButton>Components</TabButton> <---Children usage*/}
         <TabButton
           isSelected={selectedTopic === "components"}
@@ -103,6 +103,7 @@ export default function Examples() {
           )} */}
       {/*If selected Topic ===null show <p> if not render nothing*/}
       {expertContent}
-    </section>
+    </Section>
+      
   );
 }
