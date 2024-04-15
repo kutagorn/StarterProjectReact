@@ -2,6 +2,7 @@ import { useState } from "react";
 import { EXAMPLES } from "../data";
 import TabButton from "./TabButton";
 import Card from "./Card/Card";
+import Tabs from "./Tabs";
 import Section from "./Section";
 
 export default function Examples() {
@@ -58,9 +59,8 @@ export default function Examples() {
 
   return (
     <Section title="Examples" id="examples" className ="examples">
-        <menu>
-        {/* <TabButton>Components</TabButton> <---Children usage*/}
-        <TabButton
+      <Tabs buttons={<>
+      <TabButton
           isSelected={selectedTopic === "components"}
           onClick={() => handleSelect("components")}
         >
@@ -90,8 +90,13 @@ export default function Examples() {
         >
           Experts{" "}
         </TabButton>
+        </>
+        }> {tabContent}</Tabs>
+        <menu>
+        {/* <TabButton>Components</TabButton> <---Children usage*/}
+        
       </menu>
-      {tabContent}
+     
       {/* {!selectedTopic ? <p>Please select a topic.</p> : (
             <div id="tab-content">
               <h3>{EXAMPLES[selectedTopic].title} </h3>
