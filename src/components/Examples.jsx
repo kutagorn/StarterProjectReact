@@ -59,7 +59,9 @@ export default function Examples() {
 
   return (
     <Section title="Examples" id="examples" className ="examples">
-      <Tabs buttons={<>
+      <Tabs
+       buttonsContainer="menu" //{Section} you can use custom components like this 
+       buttons={<>
       <TabButton
           isSelected={selectedTopic === "components"}
           onClick={() => handleSelect("components")}
